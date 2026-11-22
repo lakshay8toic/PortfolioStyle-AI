@@ -1,23 +1,19 @@
-# 🌐 Open Website Instantly
+# 🏨 Open Website Directly
 
-### Option 1: Live Web Link (Click to open anywhere!)
-👉 **[Open Live PortfolioStyle AI Website](https://lakshay8toic.github.io/PortfolioStyle-AI/)**
+### ⚡ Click to Open Your Local Website:
+👉 **[http://localhost:8000](http://localhost:8000)**
 
----
-
-### Option 2: 1-Click Offline Local Launch
-
-#### 🍎 On Mac:
-Just **double-click** on:
-👉 **`Launch_Website.command`**
-
-*(Starts local server and opens `http://localhost:8000` automatically in your browser!)*
+*(The background server is running continuously on your Mac. Whenever you click the link above, it opens the interactive website instantly in your browser!)*
 
 ---
 
-#### 🪟 On Windows:
-Just **double-click** on:
-👉 **`Launch_Website_Windows.bat`**
+### 🌐 Cloud Backup Link:
+👉 **[https://lakshay8toic.github.io/PortfolioStyle-AI/](https://lakshay8toic.github.io/PortfolioStyle-AI/)**
+
+---
+
+### 🍎 Offline Double-Click:
+You can also double-click **`Launch_Website.command`** in this folder at any time.
 
 ---
 

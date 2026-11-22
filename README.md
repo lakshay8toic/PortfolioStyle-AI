@@ -4,11 +4,16 @@ An AI-powered hotel photography standardization system developed for hotel chain
 
 ---
 
-## 🌐 Live Interactive Website
+## ⚡ Click to Open Website Locally
 
-👉 **[Click Here to Open Live Website](https://lakshay8toic.github.io/PortfolioStyle-AI/)**
+👉 **[http://localhost:8000](http://localhost:8000)**
 
-Experience the live interactive standardization pipeline, explore before-and-after results across hotel categories, and inspect 1:1 structural edge preservation.
+*(The local server is already running in the background. Clicking this link opens the interactive website instantly in your browser!)*
+
+---
+
+## 🌐 Cloud Link:
+👉 **[https://lakshay8toic.github.io/PortfolioStyle-AI/](https://lakshay8toic.github.io/PortfolioStyle-AI/)**
 
 ---
 

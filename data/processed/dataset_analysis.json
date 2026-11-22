@@ -1,0 +1,58 @@
+[
+  {
+    "file_name": "hotel_deluxe_room_dim.bmp",
+    "dimensions": "512x512",
+    "aspect_ratio": "1.00:1",
+    "avg_rgb": [
+      96.6,
+      78.4,
+      53.9
+    ],
+    "mean_brightness": 81.0,
+    "contrast_std": 27.4,
+    "detected_tone": "Overly Warm / Amber",
+    "target_recommendation": "Apply Warm Editorial Preset (Golden 3200K, Contrast +15%, Shadows Lifted +10%)"
+  },
+  {
+    "file_name": "hotel_exterior_harsh.bmp",
+    "dimensions": "512x512",
+    "aspect_ratio": "1.00:1",
+    "avg_rgb": [
+      202.2,
+      212.3,
+      201.4
+    ],
+    "mean_brightness": 208.0,
+    "contrast_std": 51.2,
+    "detected_tone": "Neutral / Balanced",
+    "target_recommendation": "Apply Warm Editorial Preset (Golden 3200K, Contrast +15%, Shadows Lifted +10%)"
+  },
+  {
+    "file_name": "hotel_lobby_cool.bmp",
+    "dimensions": "512x512",
+    "aspect_ratio": "1.00:1",
+    "avg_rgb": [
+      167.9,
+      183.4,
+      215.2
+    ],
+    "mean_brightness": 182.4,
+    "contrast_std": 15.5,
+    "detected_tone": "Cool / Blueish (Needs Warmth)",
+    "target_recommendation": "Apply Warm Editorial Preset (Golden 3200K, Contrast +15%, Shadows Lifted +10%)"
+  },
+  {
+    "file_name": "hotel_poolside_mixed.bmp",
+    "dimensions": "512x512",
+    "aspect_ratio": "1.00:1",
+    "avg_rgb": [
+      102.7,
+      164.8,
+      195.3
+    ],
+    "mean_brightness": 149.7,
+    "contrast_std": 28.1,
+    "detected_tone": "Cool / Blueish (Needs Warmth)",
+    "target_recommendation": "Apply Warm Editorial Preset (Golden 3200K, Contrast +15%, Shadows Lifted +10%)"
+  }
+]

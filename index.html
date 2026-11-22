@@ -350,12 +350,12 @@
       <div class="image-preview-area">
         <div class="preview-card">
           <div class="tag">Original Photo (Unstandardized)</div>
-          <img id="origImg" src="/data/raw/hotel_lobby_cool.png" alt="Original Hotel Photo">
+          <img id="origImg" src="data/raw/hotel_lobby_cool.png" alt="Original Hotel Photo">
         </div>
 
         <div class="preview-card">
           <div class="tag" style="background: rgba(16, 185, 129, 0.8);">✨ AI Standardized Output</div>
-          <img id="stdImg" src="/outputs/standardized/hotel_lobby_cool_standardized.png" alt="Standardized Hotel Photo">
+          <img id="stdImg" src="outputs/standardized/hotel_lobby_cool_standardized.png" alt="Standardized Hotel Photo">
         </div>
       </div>
 
@@ -364,7 +364,7 @@
         <p style="color:var(--text-muted); font-size:13px; margin-bottom:12px;">
           Left half = Raw photograph with temperature flaws | Right half = AI harmonized 3200K aesthetic with zero structural deformation.
         </p>
-        <img id="compImg" src="/outputs/comparisons/hotel_lobby_cool_comparison.png" alt="Comparison Grid">
+        <img id="compImg" src="outputs/comparisons/hotel_lobby_cool_comparison.png" alt="Comparison Grid">
       </div>
     </div>
   </div>
@@ -372,9 +372,9 @@
   <script>
     function updateImage() {
       const selected = document.getElementById('imageSelect').value;
-      document.getElementById('origImg').src = `/data/raw/${selected}.png`;
-      document.getElementById('stdImg').src = `/outputs/standardized/${selected}_standardized.png`;
-      document.getElementById('compImg').src = `/outputs/comparisons/${selected}_comparison.png`;
+      document.getElementById('origImg').src = `data/raw/${selected}.png`;
+      document.getElementById('stdImg').src = `outputs/standardized/${selected}_standardized.png`;
+      document.getElementById('compImg').src = `outputs/comparisons/${selected}_comparison.png`;
     }
 
     function runSimulation() {

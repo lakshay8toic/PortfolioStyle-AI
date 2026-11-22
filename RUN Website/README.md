@@ -1,18 +1,21 @@
-# 🚀 How to Run the Website in One Click
+# 🌐 Open Website Instantly
 
-This folder gives you instant, 1-click access to launch the **PortfolioStyle AI** website!
+### Option 1: Live Web Link (Click to open anywhere!)
+👉 **[Open Live PortfolioStyle AI Website](https://lakshay8toic.github.io/PortfolioStyle-AI/)**
 
 ---
 
-### 🍎 On Mac:
+### Option 2: 1-Click Offline Local Launch
+
+#### 🍎 On Mac:
 Just **double-click** on:
 👉 **`Launch_Website.command`**
 
-*(It will start the server and automatically open the website at `http://localhost:8000` in your web browser!)*
+*(Starts local server and opens `http://localhost:8000` automatically in your browser!)*
 
 ---
 
-### 🪟 On Windows:
+#### 🪟 On Windows:
 Just **double-click** on:
 👉 **`Launch_Website_Windows.bat`**
 

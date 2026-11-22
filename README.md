@@ -4,18 +4,37 @@ An AI-powered hotel photography standardization system developed for hotel chain
 
 ---
 
+## ⚡ One-Click Local Web App
+
+You can run and explore the full interactive visual UI locally in just **one click**:
+
+```bash
+# Option 1: Run the executable launcher
+./run_app.sh
+
+# Option 2: Or directly with python
+python3 app.py
+```
+This automatically starts the local server and opens **`http://localhost:8000`** in your default web browser!
+
+---
+
 ## 📁 Repository Structure
 
 ```
 PortfolioStyle-AI/
+├── app.py                           # One-click web server & browser launcher
+├── run_app.sh                       # Double-clickable shell launcher
+├── index.html                       # Modern dark-mode UI with live comparisons
 ├── data/
-│   ├── raw/                 # Input hotel photos (Lobby, Deluxe Room, Exterior, Poolside)
-│   └── processed/           # Statistical analysis JSON logs
+│   ├── raw/                         # Input hotel photos (Lobby, Deluxe Room, Exterior, Poolside)
+│   └── processed/                   # Statistical analysis JSON logs
 ├── src/
 │   ├── generate_sample_dataset.py   # Dataset creation helper
 │   ├── dataset_analysis.py          # Week 1: Image statistics, luminance & tone analysis
 │   ├── standardization_pipeline.py  # Standalone runnable pipeline & comparison generator
-│   └── sd_controlnet_pipeline.py    # Week 2: Full PyTorch/Diffusers ControlNet inpainting
+│   ├── sd_controlnet_pipeline.py    # Week 2: Full PyTorch/Diffusers ControlNet inpainting
+│   └── convert_bmp_to_png.py        # Web asset converter
 ├── notebooks/
 │   └── PortfolioStyle_AI_Pipeline.ipynb # Interactive Jupyter Notebook (Google Colab ready)
 ├── deliverables/
@@ -24,35 +43,17 @@ PortfolioStyle-AI/
 │   ├── Deliverable_3_Standardized_Hotel_Image_Portfolio.md
 │   └── Deliverable_4_Final_PortfolioStyle_AI_Project_Report.md
 ├── outputs/
-│   ├── standardized/        # Processed standardized photos
-│   └── comparisons/         # Before & After side-by-side comparison images
+│   ├── standardized/                # Processed standardized photos
+│   └── comparisons/                 # Before & After side-by-side comparison images
 └── docs/
     └── TEACHER_EXPLANATION_GUIDE.md # Simple question & answer guide for viva/presentation
 ```
 
 ---
 
-## 🚀 Quickstart
-
-### 1. Run Statistical Dataset Analysis (Week 1)
-```bash
-python3 src/dataset_analysis.py
-```
-
-### 2. Run Image Standardization Pipeline (Weeks 2 & 3)
-```bash
-python3 src/standardization_pipeline.py
-```
-This processes all raw property photos and saves the standardized outputs and comparisons into `outputs/`.
-
-### 3. Open in Jupyter or Google Colab
-Open `notebooks/PortfolioStyle_AI_Pipeline.ipynb` in VS Code, JupyterLab, or upload to Google Colab.
-
----
-
 ## 📊 Deliverables Mapping (MySkillWallet Portal)
 
-1. **#1 Hotel Image Dataset Preparation Report:** [Deliverable 1](file:///Users/lakshay/.gemini/antigravity/scratch/PortfolioStyle-AI/deliverables/Deliverable_1_Hotel_Image_Dataset_Preparation_Report.md)
-2. **#2 Hotel Image Style Standardization Pipeline:** [Deliverable 2](file:///Users/lakshay/.gemini/antigravity/scratch/PortfolioStyle-AI/deliverables/Deliverable_2_Hotel_Image_Style_Standardization_Pipeline.md)
-3. **#3 Standardized Hotel Image Portfolio:** [Deliverable 3](file:///Users/lakshay/.gemini/antigravity/scratch/PortfolioStyle-AI/deliverables/Deliverable_3_Standardized_Hotel_Image_Portfolio.md)
-4. **#4 Final PortfolioStyle AI Project Report:** [Deliverable 4](file:///Users/lakshay/.gemini/antigravity/scratch/PortfolioStyle-AI/deliverables/Deliverable_4_Final_PortfolioStyle_AI_Project_Report.md)
+1. **#1 Hotel Image Dataset Preparation Report:** [Deliverable 1](deliverables/Deliverable_1_Hotel_Image_Dataset_Preparation_Report.md)
+2. **#2 Hotel Image Style Standardization Pipeline:** [Deliverable 2](deliverables/Deliverable_2_Hotel_Image_Style_Standardization_Pipeline.md)
+3. **#3 Standardized Hotel Image Portfolio:** [Deliverable 3](deliverables/Deliverable_3_Standardized_Hotel_Image_Portfolio.md)
+4. **#4 Final PortfolioStyle AI Project Report:** [Deliverable 4](deliverables/Deliverable_4_Final_PortfolioStyle_AI_Project_Report.md)

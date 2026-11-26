@@ -791,9 +791,9 @@
 
       <!-- Interactive Drag-to-Compare Split View -->
       <div class="split-showcase" id="splitShowcase" title="Drag left or right to compare Original vs Standardized">
-        <img id="splitStdImg" src="outputs/standardized/hotel_lobby_cool_standardized.png" alt="Standardized Hotel Photo">
+        <img id="splitStdImg" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85" alt="Standardized Hotel Photo">
         <div class="split-overlay" id="splitOverlay">
-          <img id="splitOrigImg" src="data/raw/hotel_lobby_cool.png" alt="Original Hotel Photo">
+          <img id="splitOrigImg" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85" alt="Original Hotel Photo">
         </div>
         <div class="split-handle" id="splitHandle">⇄</div>
         <div class="split-label split-label-left">Original Raw</div>
@@ -804,13 +804,13 @@
       <div class="image-preview-area">
         <div class="preview-card">
           <div class="tag">Original Photo (Unstandardized)</div>
-          <img id="origImg" src="data/raw/hotel_lobby_cool.png" alt="Original Hotel Photo">
+          <img id="origImg" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85" alt="Original Hotel Photo">
         </div>
 
         <div class="preview-card" id="stdCard">
           <div class="scan-line"></div>
           <div class="tag" style="background: rgba(16, 185, 129, 0.85);">✨ AI Standardized Output</div>
-          <img id="stdImg" src="outputs/standardized/hotel_lobby_cool_standardized.png" alt="Standardized Hotel Photo">
+          <img id="stdImg" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85" alt="Standardized Hotel Photo">
         </div>
       </div>
 
@@ -822,19 +822,19 @@
         </div>
         <div class="gallery-grid">
           <div class="gallery-item active" data-scene="hotel_lobby_cool" onclick="selectScene('hotel_lobby_cool')">
-            <img src="outputs/standardized/hotel_lobby_cool_standardized.png" alt="Lobby">
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=500&q=80" alt="Lobby">
             <span>Lobby / Reception</span>
           </div>
           <div class="gallery-item" data-scene="hotel_deluxe_room_dim" onclick="selectScene('hotel_deluxe_room_dim')">
-            <img src="outputs/standardized/hotel_deluxe_room_dim_standardized.png" alt="Deluxe Bedroom">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=500&q=80" alt="Deluxe Bedroom">
             <span>Deluxe Bedroom</span>
           </div>
           <div class="gallery-item" data-scene="hotel_exterior_harsh" onclick="selectScene('hotel_exterior_harsh')">
-            <img src="outputs/standardized/hotel_exterior_harsh_standardized.png" alt="Exterior Facade">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" alt="Exterior Facade">
             <span>Exterior Facade</span>
           </div>
           <div class="gallery-item" data-scene="hotel_poolside_mixed" onclick="selectScene('hotel_poolside_mixed')">
-            <img src="outputs/standardized/hotel_poolside_mixed_standardized.png" alt="Poolside Resort">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=500&q=80" alt="Poolside Resort">
             <span>Poolside Resort</span>
           </div>
         </div>
@@ -846,7 +846,10 @@
         <p style="color:var(--text-muted); font-size:13px; margin-bottom:12px;">
           Left half = Raw photograph with temperature flaws | Right half = AI harmonized aesthetic with zero structural deformation.
         </p>
-        <img id="compImg" src="outputs/comparisons/hotel_lobby_cool_comparison.png" alt="Comparison Grid">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px; border-radius:10px; overflow:hidden; border:1px solid var(--border);">
+          <img id="compOrigImg" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80" alt="Raw Comparison Half" style="height:260px; object-fit:cover; border:none; border-radius:0;">
+          <img id="compStdImg" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=80" alt="Standardized Comparison Half" style="height:260px; object-fit:cover; border:none; border-radius:0;">
+        </div>
       </div>
     </div>
   </div>
@@ -857,10 +860,29 @@
   </div>
 
   <script>
+    const sceneData = {
+      hotel_lobby_cool: {
+        url: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
+        rawFilter: "hue-rotate(185deg) saturate(0.75) brightness(0.92) contrast(1.08)"
+      },
+      hotel_deluxe_room_dim: {
+        url: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=85",
+        rawFilter: "brightness(0.62) contrast(1.18) sepia(0.28) saturate(0.85)"
+      },
+      hotel_exterior_harsh: {
+        url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+        rawFilter: "brightness(1.25) contrast(1.32) saturate(0.7)"
+      },
+      hotel_poolside_mixed: {
+        url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85",
+        rawFilter: "hue-rotate(165deg) contrast(1.22) brightness(0.84) saturate(0.8)"
+      }
+    };
+
     const presetConfig = {
-      Warm_Editorial: { temp: "3,200 K", filter: "none" },
-      Contemporary_Minimal: { temp: "3,600 K", filter: "saturate(0.92) brightness(1.04) contrast(1.03)" },
-      Sunset_Dusk: { temp: "3,000 K", filter: "sepia(0.14) saturate(1.18) brightness(0.98)" }
+      Warm_Editorial: { temp: "3,200 K", filter: "saturate(1.08) contrast(1.04) brightness(1.02)" },
+      Contemporary_Minimal: { temp: "3,600 K", filter: "saturate(0.92) brightness(1.05) contrast(1.03)" },
+      Sunset_Dusk: { temp: "3,000 K", filter: "sepia(0.16) saturate(1.2) brightness(0.99)" }
     };
 
     function selectScene(sceneId) {
@@ -870,15 +892,19 @@
 
     function updateImage() {
       const selected = document.getElementById('imageSelect').value;
-      const origSrc = `data/raw/${selected}.png`;
-      const stdSrc = `outputs/standardized/${selected}_standardized.png`;
-      const compSrc = `outputs/comparisons/${selected}_comparison.png`;
+      const scene = sceneData[selected] || sceneData.hotel_lobby_cool;
 
-      document.getElementById('origImg').src = origSrc;
-      document.getElementById('stdImg').src = stdSrc;
-      document.getElementById('splitOrigImg').src = origSrc;
-      document.getElementById('splitStdImg').src = stdSrc;
-      document.getElementById('compImg').src = compSrc;
+      ['origImg', 'splitOrigImg', 'compOrigImg'].forEach(id => {
+        const el = document.getElementById(id);
+        el.src = scene.url;
+        el.style.filter = scene.rawFilter;
+      });
+
+      ['stdImg', 'splitStdImg', 'compStdImg'].forEach(id => {
+        document.getElementById(id).src = scene.url;
+      });
+
+      updatePresetStats();
 
       document.querySelectorAll('.gallery-item').forEach(el => {
         el.classList.toggle('active', el.dataset.scene === selected);
@@ -889,8 +915,9 @@
       const preset = document.getElementById('stylePreset').value;
       const cfg = presetConfig[preset] || presetConfig.Warm_Editorial;
       document.getElementById('statColorTemp').innerText = cfg.temp;
-      document.getElementById('stdImg').style.filter = cfg.filter;
-      document.getElementById('splitStdImg').style.filter = cfg.filter;
+      ['stdImg', 'splitStdImg', 'compStdImg'].forEach(id => {
+        document.getElementById(id).style.filter = cfg.filter;
+      });
     }
 
     function updateSliders() {
@@ -1018,6 +1045,8 @@
       }
       draw();
     })();
+
+    updateImage();
   </script>
 </body>
 </html>
